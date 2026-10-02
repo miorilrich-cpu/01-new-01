@@ -3,76 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Tarot Archive</title>
+    <title>Cute Tarot Archive - คลังไพ่สุดน่ารัก</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Font: Inter & Playfair Display -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <!-- Google Font: Prompt สำหรับความน่ารักอ่านง่าย -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FBF9F5;
-            color: #2C2A29;
+            font-family: 'Prompt', sans-serif;
+            background-color: #FFF5F7; /* พื้นหลังสีชมพูพาสเทลอ่อนๆ ละมุนตา */
+            color: #4A4044;
         }
-        .font-serif-custom {
-            font-family: 'Playfair Display', serif;
-        }
-        .minimal-shadow {
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        /* เงาละมุนๆ สไตล์การ์ดน่ารัก */
+        .cute-shadow {
+            box-shadow: 0 12px 30px -10px rgba(255, 182, 193, 0.4);
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-stone-200">
+<body class="min-h-screen flex flex-col justify-between selection:bg-pink-200">
 
-    <!-- Header / Navbar (ปรับให้กระชับบนมือถือ) -->
-    <header class="w-full py-5 px-6 md:px-16 flex justify-between items-center border-b border-stone-200">
-        <div class="font-serif-custom text-sm md:text-lg tracking-wider font-medium">TAROT ARCHIVE</div>
-        <!-- เมนูด้านบน ซ่อนบนมือถือจอเล็ก แสดงผลแบบมินิมอล -->
-        <nav class="hidden md:flex space-x-8 text-xs tracking-widest text-stone-500 font-medium uppercase">
-            <a href="#" class="hover:text-black transition">Overview</a>
-            <a href="#" class="hover:text-black transition">Major Arcana</a>
-            <a href="#" class="hover:text-black transition">Symbolism</a>
-            <a href="#" class="hover:text-black transition">Index</a>
-        </nav>
-        <div class="text-[10px] md:text-xs tracking-widest text-stone-400">VOL. 01</div>
+    <!-- Header / Navbar -->
+    <header class="w-full py-5 px-6 md:px-16 flex justify-between items-center bg-white/60 backdrop-blur-md border-b border-pink-100 sticky top-0 z-50">
+        <div class="text-sm md:text-base font-bold text-pink-500 tracking-wider flex items-center space-x-2">
+            <span>✨</span> <span>TAROT PASTEL</span>
+        </div>
+        <div class="text-xs bg-pink-100 text-pink-600 px-3 py-1 rounded-full font-medium">
+            Vol. 01 🌸
+        </div>
     </header>
 
-    <!-- Main Content (ปรับโครงสร้าง Grid ให้สลับตำแหน่งสวยงามบนมือถือและจอใหญ่) -->
-    <main class="max-w-6xl mx-auto px-6 py-10 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-6 py-10 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
         
-        <!-- Minimal Card Graphic Column (แสดงขึ้นมาก่อนบนมือถือ หรือปรับลำดับได้) -->
-        <div class="md:col-span-5 flex justify-center order-1 md:order-2 mb-4 md:mb-0">
-            <div class="w-56 h-80 md:w-64 md:h-96 bg-white border border-stone-200 rounded-2xl minimal-shadow p-5 md:p-6 flex flex-col justify-between relative transform rotate-1 md:rotate-2 hover:rotate-0 transition duration-500">
-                <div class="flex justify-between items-center text-xs tracking-widest text-stone-400 font-serif-custom">
+        <!-- Cute Card Graphic Column -->
+        <div class="md:col-span-5 flex justify-center order-1 md:order-2">
+            <div class="w-56 h-80 md:w-64 md:h-96 bg-gradient-to-b from-white to-pink-50 border-2 border-pink-200 rounded-3xl cute-shadow p-6 flex flex-col justify-between relative transform rotate-2 hover:rotate-0 transition duration-500">
+                <div class="flex justify-between items-center text-xs font-semibold text-pink-400">
                     <span>00</span>
                     <span>THE FOOL</span>
                 </div>
                 <div class="my-auto text-center">
-                    <div class="w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full border border-stone-200 flex items-center justify-center text-stone-300">
-                        ✦
+                    <!-- ไอคอนดาวน่ารักๆ ตรงกลางไพ่ -->
+                    <div class="w-16 h-16 mx-auto rounded-full bg-pink-100 flex items-center justify-center text-2xl animate-bounce">
+                        🌟
                     </div>
                 </div>
-                <div class="text-[10px] text-center tracking-[0.2em] text-stone-400 uppercase">
-                    New Beginnings
+                <div class="text-[11px] text-center tracking-wider text-pink-400 font-medium uppercase bg-pink-50 py-1.5 rounded-full">
+                    New Beginning 🌷
                 </div>
             </div>
         </div>
 
         <!-- Text Column -->
         <div class="md:col-span-7 space-y-4 md:space-y-6 text-center md:text-left order-2 md:order-1">
-            <span class="text-[10px] md:text-xs uppercase tracking-[0.25em] text-stone-400 font-medium block">Digital Collection</span>
-            <h1 class="font-serif-custom text-3xl sm:text-4xl md:text-6xl text-stone-900 leading-tight font-normal">
-                The Architecture <br>of Tarot Symbols.
+            <span class="inline-block bg-pink-100 text-pink-600 text-xs px-3 py-1 rounded-full font-medium">
+                🎀 สารานุกรมไพ่ทาโรต์สุดคิ้วท์
+            </span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+                ทำความรู้จักไพ่ทาโรต์ <br>ในมุมมองที่สดใสกว่าเดิม
             </h1>
-            <p class="text-stone-600 font-light text-xs md:text-base leading-relaxed max-w-lg mx-auto md:mx-0">
-                สารานุกรมดิจิทัลที่รวบรวมองค์ประกอบ ลวดลาย และความหมายเชิงสัญลักษณ์ของไพ่ทาโรต์ ในมุมมองการออกแบบร่วมสมัยที่เรียบง่ายและเข้าใจง่าย
+            <p class="text-gray-500 font-light text-sm md:text-base leading-relaxed max-w-lg mx-auto md:mx-0">
+                รวบรวมความหมาย ลวดลาย และสัญลักษณ์ของไพ่ทาโรต์ ออกมาในรูปแบบที่อ่านสนุก เข้าใจง่าย และเต็มไปด้วยความสดใสใจฟู ✨
             </p>
             <div class="pt-2 md:pt-4 flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
-                <button class="w-full sm:w-auto bg-stone-900 text-white px-6 py-3 rounded-full text-xs tracking-widest uppercase hover:bg-stone-800 transition">
-                    Explore Archive
+                <button class="w-full sm:w-auto bg-pink-400 hover:bg-pink-500 text-white font-medium px-8 py-3 rounded-full text-xs tracking-wider shadow-md hover:shadow-lg transition">
+                    ✨ เริ่มสำรวจกันเลย
                 </button>
-                <button class="w-full sm:w-auto border border-stone-300 px-6 py-3 rounded-full text-xs tracking-widest uppercase text-stone-700 hover:border-stone-400 transition">
-                    View Index
+                <button class="w-full sm:w-auto bg-white border border-pink-200 text-pink-500 hover:bg-pink-50 font-medium px-6 py-3 rounded-full text-xs tracking-wider transition">
+                    📖 ดูสารบัญไพ่
                 </button>
             </div>
         </div>
@@ -80,11 +78,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full py-6 px-6 md:px-16 border-t border-stone-200 flex flex-col sm:flex-row justify-between items-center text-[10px] md:text-xs text-stone-400 space-y-3 sm:space-y-0 text-center sm:text-left">
-        <div>© 2026 ARCHIVE. ALL RIGHTS RESERVED.</div>
-        <div class="space-x-6">
-            <a href="#" class="hover:text-stone-600 transition">Privacy</a>
-            <a href="#" class="hover:text-stone-600 transition">Terms</a>
+    <footer class="w-full py-6 px-6 md:px-16 bg-white/40 border-t border-pink-100 flex flex-col sm:flex-row justify-between items-center text-xs text-pink-400 space-y-2 sm:space-y-0 text-center">
+        <div>© 2026 CUTE TAROT ARCHIVE. ALL RIGHTS RESERVED. 💖</div>
+        <div class="space-x-4">
+            <a href="#" class="hover:text-pink-600 transition">นโยบายความเป็นส่วนตัว</a>
         </div>
     </footer>
 
