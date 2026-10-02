@@ -1,274 +1,437 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Review - รีวิวร้านค้าและความประทับใจ</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Font: Prompt -->
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Prompt', sans-serif;
-            background-color: #FFF8FA;
-            color: #5A4E52;
-        }
-        .cute-card-shadow {
-            box-shadow: 0 12px 35px -10px rgba(255, 182, 193, 0.4);
-        }
-        @keyframes gentleSway {
-            0% { transform: rotate(-1.5deg) translateY(0px); }
-            50% { transform: rotate(1.5deg) translateY(-5px); }
-            100% { transform: rotate(-1.5deg) translateY(0px); }
-        }
-        .swaying-card {
-            animation: gentleSway 5s ease-in-out infinite;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yoneko Payment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#fff5f9;
+    --pink:#ff75a0;
+    --pink-light:#ffe3ed;
+    --pink-hover:#ff5c93;
+    --brown:#6e4731;
+    --card-bg:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Mitr',sans-serif;
+    background:
+    radial-gradient(circle,#ffecf4 2px,transparent 2px);
+    background-size:28px 28px;
+    background-color:var(--bg);
+    color:var(--brown);
+    padding:35px 20px 70px;
+}
+
+.container{
+    max-width:420px;
+    margin:auto;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+    padding: 25px 20px;
+    box-shadow: 0 15px 35px rgba(255, 117, 160, 0.12);
+    border: 2px solid #fff;
+}
+
+.title{
+    text-align:center;
+    color:var(--pink);
+    font-size:30px;
+    font-weight:600;
+    margin-bottom:20px;
+    text-shadow: 0 2px 8px rgba(255, 117, 160, 0.25);
+    letter-spacing: 1px;
+}
+
+/* QR FRAME */
+
+.qr-frame{
+    background:#fff;
+    border:2px dashed var(--pink);
+    border-radius:34px;
+    padding:12px;
+    box-shadow:0 10px 25px rgba(255,117,160,.1);
+    transition: transform 0.3s ease;
+}
+
+.qr-frame:hover {
+    transform: translateY(-3px);
+}
+
+.qr-inner{
+    border:1px solid var(--pink-light);
+    border-radius:26px;
+    overflow:hidden;
+    padding:10px;
+    background: #fff9fc;
+}
+
+.qr-inner img{
+    width:100%;
+    display:block;
+    border-radius:18px;
+}
+
+/* PLAYER */
+
+.player{
+    text-align:center;
+    margin-top:20px;
+    background: var(--pink-light);
+    padding: 15px;
+    border-radius: 24px;
+}
+
+.time{
+    font-size:14px;
+    margin-bottom:12px;
+    color:var(--brown);
+    font-weight: 500;
+}
+
+.controls{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:28px;
+    margin-top:8px;
+}
+
+.player-btn{
+    width:42px;
+    height:42px;
+    border:none;
+    background:#fff;
+    border-radius: 50%;
+    cursor:pointer;
+    color:var(--pink);
+    box-shadow: 0 4px 10px rgba(255, 117, 160, 0.2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition: all 0.2s ease;
+}
+
+.player-btn:hover {
+    background: var(--pink);
+    color: #fff;
+    transform: scale(1.08);
+}
+
+.player-btn svg{
+    width:20px;
+    height:20px;
+    fill:currentColor;
+}
+
+.section{
+    margin-top:24px;
+}
+
+.line{
+    width:100%;
+    height:1.5px;
+    background:var(--pink-light);
+    margin-bottom:16px;
+    border-radius: 99px;
+}
+
+.label{
+    color:var(--pink);
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+    font-weight: 600;
+}
+
+.center-label{
+    text-align:center;
+}
+
+.center-value{
+    text-align:center;
+    font-size:22px;
+    font-weight:600;
+    color: var(--brown);
+}
+.value{
+    font-size:16px;
+    font-weight: 500;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    background: #fff;
+    padding: 8px 12px 8px 16px;
+    border-radius: 16px;
+    border: 1px solid var(--pink-light);
+}
+
+.copy-btn{
+    border:none;
+    background:var(--pink-light);
+    color:var(--pink);
+    padding:8px 16px;
+    border-radius:999px;
+    cursor:pointer;
+    font-family:'Mitr',sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: var(--pink);
+    color: #fff;
+}
+
+.small-note{
+    margin-top:8px;
+    font-size:12px;
+    opacity:.8;
+}
+
+.center{
+    text-align:center;
+}
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+}
+
+.footer h3{
+    color:var(--pink);
+    font-weight:500;
+    font-size:18px;
+    text-shadow: 0 2px 6px rgba(255, 117, 160, 0.2);
+}
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    background:var(--pink);
+    color:white;
+    padding:10px 22px;
+    border-radius:999px;
+    opacity:0;
+    transition:.3s;
+    pointer-events:none;
+    box-shadow: 0 5px 15px rgba(255, 117, 160, 0.4);
+    font-weight: 500;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(-5px);
+}
+
+</style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-pink-200">
+<body>
 
-    <!-- Header / Navbar -->
-    <header class="w-full py-5 px-6 md:px-16 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-pink-100 sticky top-0 z-50">
-        <div class="flex items-center space-x-2">
-            <svg class="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
-            <span class="text-xs md:text-sm font-medium tracking-wider text-pink-600">Shop Review Hub</span>
-        </div>
-        <a href="#review-section" class="text-xs bg-pink-100 text-pink-600 px-4 py-2 rounded-full font-medium hover:bg-pink-200 transition">
-            เขียนรีวิวร้านค้า
-        </a>
-    </header>
+<div class="container">
 
-    <!-- Main Content -->
-    <main class="max-w-5xl mx-auto px-6 py-10 md:py-16 space-y-16">
-        
-        <!-- Hero Section & Shop Overview -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-            
-            <!-- เฟรมการ์ดที่ปรับขนาดกรอบและช่องใส่รูปภาพใหม่ให้ลงตัว -->
-            <div class="md:col-span-5 flex flex-col items-center order-1 md:order-2 space-y-4">
-                <div class="w-72 h-[460px] md:w-80 md:h-[490px] bg-white border-2 border-pink-300 rounded-[2.2rem] cute-card-shadow p-6 flex flex-col justify-between relative swaying-card">
-                    
-                    <!-- SVG ลวดลายเส้นขอบซ้อนเหลื่อมและดาวตามเรฟภาพ -->
-                    <svg class="absolute inset-0 w-full h-full pointer-events-none p-3.5 overflow-visible" viewBox="0 0 320 490" fill="none" stroke="#db2777" stroke-width="1.2">
-                        <!-- กรอบเส้นซ้อนด้านใน -->
-                        <path d="M 28 22 L 292 22 L 292 468 L 28 468 Z" stroke-opacity="0.4"/>
-                        <path d="M 16 38 L 304 38 L 304 452 L 16 452 Z" stroke-opacity="0.3"/>
-                        
-                        <!-- เส้นดีเทลยื่นออกสไตล์เรฟ -->
-                        <line x1="304" y1="200" x2="314" y2="200" />
-                        <line x1="16" y1="270" x2="6" y2="270" />
-                        <line x1="110" y1="468" x2="110" y2="482" />
-                        <line x1="190" y1="22" x2="190" y2="10" />
+<div class="title">
+    ♡ Yoneko Payment ♡
+</div>
 
-                        <!-- จุดไข่ปลาประดับ -->
-                        <circle cx="175" cy="22" r="1.5" fill="#db2777" />
-                        <circle cx="16" cy="200" r="1.5" fill="#db2777" />
-                        <circle cx="304" cy="270" r="1.5" fill="#db2777" />
-                        <circle cx="150" cy="468" r="1.5" fill="#db2777" />
+<div class="qr-frame">
 
-                        <!-- ไอคอนดาวแฉกตามเรฟ -->
-                        <path d="M 22 22 Q 22 27 17 27 Q 22 27 22 32 Q 22 27 27 27 Q 22 27 22 22 Z" fill="#db2777" />
-                        <path d="M 210 14 Q 210 18 206 18 Q 210 18 210 22 Q 210 18 214 18 Q 210 18 210 14 Z" fill="#db2777" />
-                        <path d="M 22 230 Q 22 234 18 234 Q 22 234 22 238 Q 22 234 26 234 Q 22 234 22 230 Z" fill="#db2777" />
-                        <path d="M 304 380 Q 304 386 298 386 Q 304 386 304 392 Q 304 386 310 386 Q 304 386 304 380 Z" fill="#db2777" />
-                        <path d="M 135 478 Q 135 482 131 482 Q 135 482 135 486 Q 135 482 139 482 Q 135 482 135 478 Z" fill="#db2777" />
-                    </svg>
+    <div class="qr-inner">
 
-                    <!-- ส่วนหัวการ์ด -->
-                    <div class="flex justify-between items-center text-[10px] tracking-widest text-pink-500 font-medium z-10 px-2 pt-1">
-                        <span>SHOP FRAME</span>
-                        <span>EDITION 01</span>
-                    </div>
+        <img src="https://via.placeholder.com/800x800.png?text=QR+CODE"
+        alt="QR Code">
 
-                    <!-- พื้นที่แสดงรูปภาพในการ์ด (ปรับขนาดช่องใส่รูปให้กว้างและสูงขึ้นสมส่วน) -->
-                    <div class="my-auto w-full h-72 md:h-80 rounded-2xl bg-pink-50/50 border border-pink-200 overflow-hidden relative flex items-center justify-center z-10 shadow-inner">
-                        <img id="card-image-preview" src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=600&auto=format&fit=crop" alt="Card Photo" class="w-full h-full object-cover">
-                    </div>
+    </div>
 
-                    <!-- ส่วนท้ายการ์ด -->
-                    <div class="text-center z-10 pb-1">
-                        <span class="text-[10px] font-light tracking-[0.3em] text-pink-400 uppercase block">memories & review</span>
-                    </div>
-                </div>
+</div>
 
-                <!-- ปุ่มสำหรับเปลี่ยนรูปภาพในการ์ด -->
-                <label class="cursor-pointer bg-pink-100 hover:bg-pink-200 text-pink-600 text-xs px-5 py-2.5 rounded-full font-medium transition shadow-sm border border-pink-200">
-                    เปลี่ยนรูปภาพในกรอบ
-                    <input type="file" id="card-image-input" accept="image/*" class="hidden" onchange="previewCardImage(event)">
-                </label>
-            </div>
+<div class="player">
 
-            <!-- Text & Summary Info Column -->
-            <div class="md:col-span-7 space-y-6 text-center md:text-left order-2 md:order-1">
-                <span class="inline-flex items-center space-x-1.5 text-xs text-pink-600 bg-pink-100 px-3.5 py-1 rounded-full font-medium">
-                    <svg class="w-3.5 h-3.5 text-pink-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
-                    <span>พื้นที่บอกต่อความประทับใจ</span>
-                </span>
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
-                    รีวิวและคะแนนความพึงพอใจ <br>จากลูกค้าคนพิเศษ
-                </h1>
-                <p class="text-gray-500 font-light text-sm md:text-base leading-relaxed max-w-lg mx-auto md:mx-0">
-                    รวมความรู้สึกและคำติชมจากประสบการณ์การใช้บริการจริง เพื่อตอกย้ำความมั่นใจและพัฒนาบริการให้ดียิ่งขึ้น
-                </p>
+    <div class="time">
+        2:57 ───────♡─────── 5:20
+    </div>
 
-                <!-- กล่องสรุปสถิติ -->
-                <div class="bg-white border border-pink-100 rounded-2xl p-4 flex items-center justify-around max-w-md mx-auto md:mx-0 cute-card-shadow">
-                    <div class="text-center">
-                        <span class="text-2xl font-bold text-pink-500">4.9</span>
-                        <div class="text-[10px] text-gray-400 tracking-wider">คะแนนเฉลี่ยรวม</div>
-                    </div>
-                    <div class="h-8 w-[1px] bg-pink-100"></div>
-                    <div class="text-center">
-                        <span id="total-reviews-count" class="text-2xl font-bold text-gray-700">3</span>
-                        <div class="text-[10px] text-gray-400 tracking-wider">รีวิวทั้งหมดตอนนี้</div>
-                    </div>
-                    <div class="h-8 w-[1px] bg-pink-100"></div>
-                    <div class="text-center">
-                        <span class="text-sm font-medium text-amber-400">★★★★★</span>
-                        <div class="text-[10px] text-gray-400 tracking-wider">ความพึงพอใจ</div>
-                    </div>
-                </div>
+    <div class="controls">
 
-                <div class="pt-2 flex justify-center md:justify-start">
-                    <a href="#review-section" class="bg-pink-400 hover:bg-pink-500 text-white text-xs tracking-wider px-8 py-3.5 rounded-full shadow-md transition font-medium">
-                        เขียนรีวิวร้านค้าของคุณ
-                    </a>
-                </div>
-            </div>
+        <button class="player-btn" type="button">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M11 6v12L2.5 12 11 6zm10 0v12L12.5 12 21 6z"/>
+            </svg>
+
+        </button>
+
+        <button class="player-btn" type="button">
+
+            <svg viewBox="0 0 24 24">
+                <rect x="5" y="4" width="5" height="16"/>
+                <rect x="14" y="4" width="5" height="16"/>
+            </svg>
+
+        </button>
+
+        <button class="player-btn" type="button">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M13 6v12l8.5-6L13 6zM3 6v12l8.5-6L3 6z"/>
+            </svg>
+
+        </button>
+
+    </div>
+
+</div>
+
+<div class="section">
+
+    <div class="line"></div>
+
+    <div class="label center-label">
+        ♡ ACCOUNT NAME ♡
+    </div>
+
+    <div class="center-value">
+        Yoneko Store
+    </div>
+
+</div>
+
+<div class="section">
+
+    <div class="line"></div>
+
+    <div class="label">
+        BANK ACCOUNT
+    </div>
+
+    <div class="row">
+
+        <div class="value">
+            123-4-56789-0
         </div>
 
-        <!-- Reviews Wall Section -->
-        <section class="space-y-6">
-            <div class="text-center space-y-1">
-                <span class="text-[10px] uppercase tracking-widest text-pink-400 font-medium">Testimonials</span>
-                <h2 class="text-xl font-bold text-gray-800">เสียงสะท้อนและคอมเมนต์จากลูกค้า</h2>
-            </div>
+        <button class="copy-btn"
+        onclick="copyText('123-4-56789-0')">
+            คัดลอก
+        </button>
 
-            <!-- Grid Reviews -->
-            <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- รีวิว 1 -->
-                <div class="bg-white p-6 rounded-3xl border border-pink-100 cute-card-shadow space-y-3">
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="font-semibold text-gray-700">คุณพลอยใส</span>
-                        <span class="text-amber-400 text-xs">★★★★★</span>
-                    </div>
-                    <p class="text-xs text-gray-600 font-light leading-relaxed bg-pink-50/40 p-3.5 rounded-2xl border border-pink-100/50">
-                        "ประทับใจการบริการของร้านนี้มากค่ะ ตอบไวและให้คำแนะนำดีสุดๆ สินค้าแพ็คมาอย่างดี น่ารักมากๆ ไว้มาอุดหนุนอีกแน่นอนค่ะ"
-                    </p>
-                    <span class="text-[10px] text-pink-300 block text-right font-medium">เมื่อวานนี้</span>
-                </div>
+    </div>
 
-                <!-- รีวิว 2 -->
-                <div class="bg-white p-6 rounded-3xl border border-pink-100 cute-card-shadow space-y-3">
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="font-semibold text-gray-700">คุณมินต์</span>
-                        <span class="text-amber-400 text-xs">★★★★★</span>
-                    </div>
-                    <p class="text-xs text-gray-600 font-light leading-relaxed bg-pink-50/40 p-3.5 rounded-2xl border border-pink-100/50">
-                        "จัดส่งรวดเร็วทันใจ ร้านค้าใส่ใจรายละเอียดดีมาก ได้รับของครบถ้วนถูกต้องตามที่คุยกันไว้เลยค่ะ ประทับใจมาก"
-                    </p>
-                    <span class="text-[10px] text-pink-300 block text-right font-medium">3 วันก่อน</span>
-                </div>
+</div>
+<div class="section">
 
-                <!-- รีวิว 3 -->
-                <div class="bg-white p-6 rounded-3xl border border-pink-100 cute-card-shadow space-y-3">
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="font-semibold text-gray-700">คุณการ์ฟิลด์</span>
-                        <span class="text-amber-400 text-xs">★★★★★</span>
-                    </div>
-                    <p class="text-xs text-gray-600 font-light leading-relaxed bg-pink-50/40 p-3.5 rounded-2xl border border-pink-100/50">
-                        "ทีมงานดูแลดีและเป็นกันเองมากๆ ครับ ติดปัญหาตรงไหนช่วยเหลือรวดเร็ว ให้คะแนนเต็มสิบไม่หักเลย"
-                    </p>
-                    <span class="text-[10px] text-pink-300 block text-right font-medium">1 สัปดาห์ก่อน</span>
-                </div>
-            </div>
-        </section>
+    <div class="line"></div>
 
-        <!-- Review Form Section -->
-        <section id="review-section" class="bg-white border border-pink-200 rounded-3xl p-8 md:p-12 cute-card-shadow max-w-xl mx-auto w-full">
-            <div class="text-center mb-6 space-y-1">
-                <span class="text-[10px] uppercase tracking-widest text-pink-400 font-medium">Feedback Form</span>
-                <h2 class="text-lg font-bold text-gray-800">เขียนรีวิวให้กับร้านค้าของเรา</h2>
-                <p class="text-xs text-gray-400">รีวิวของคุณจะไปแสดงโชว์ให้คนอื่นเห็นและเพิ่มยอดรีวิวรวมทันที</p>
-            </div>
+    <div class="label">
+        TRUE WALLET
+    </div>
 
-            <form id="shop-review-form" class="space-y-4" onsubmit="submitReview(event)">
-                <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">ชื่อผู้รีวิว / นามแฝง</label>
-                    <input type="text" id="reviewer-name" required placeholder="เช่น คุณลูกหมู" class="w-full px-4 py-3 rounded-2xl border border-pink-200 text-xs text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300 bg-pink-50/30">
-                </div>
-                
-                <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">คะแนนความพึงพอใจ</label>
-                    <select id="review-rating" class="w-full px-4 py-3 rounded-2xl border border-pink-200 text-xs text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300 bg-pink-50/30">
-                        <option value="★★★★★">★★★★★ (5/5 - ประทับใจมากที่สุด)</option>
-                        <option value="★★★★☆">★★★★☆ (4/5 - ดีมาก)</option>
-                        <option value="★★★☆☆">★★★☆☆ (3/5 - ปานกลาง)</option>
-                    </select>
-                </div>
+    <div class="row">
 
-                <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">ข้อความคอมเมนต์รีวิวบริการ</label>
-                    <textarea id="review-text" rows="4" required placeholder="พิมพ์ข้อความรีวิวประสบการณ์การใช้บริการของคุณที่นี่..." class="w-full px-4 py-3 rounded-2xl border border-pink-200 text-xs text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300 bg-pink-50/30"></textarea>
-                </div>
+        <div class="value">
+            080-123-4567
+        </div>
 
-                <button type="submit" class="w-full bg-pink-400 hover:bg-pink-500 text-white text-xs tracking-wider py-3.5 rounded-2xl shadow transition font-medium">
-                    ส่งรีวิวร้านค้า
-                </button>
-            </form>
-        </section>
+        <button class="copy-btn"
+        onclick="copyText('080-123-4567')">
+            คัดลอก
+        </button>
 
-    </main>
+    </div>
 
-    <!-- Footer -->
-    <footer class="w-full py-8 px-6 md:px-16 border-t border-pink-100 text-xs text-pink-400 text-center bg-white/40">
-        © 2026 Shop Review Hub. All Rights Reserved.
-    </footer>
+</div>
 
-    <!-- Script สำหรับอัปเดตรูปภาพและการรีวิว -->
-    <script>
-        function previewCardImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('card-image-preview').src = e.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-        }
+<div class="section">
 
-        let reviewCount = 3;
+    <div class="line"></div>
 
-        function submitReview(event) {
-            event.preventDefault();
-            const name = document.getElementById('reviewer-name').value;
-            const rating = document.getElementById('review-rating').value;
-            const text = document.getElementById('review-text').value;
-            const reviewsGrid = document.getElementById('reviews-grid');
-            
-            reviewCount++;
-            document.getElementById('total-reviews-count').innerText = reviewCount;
+    <div class="label">
+        NOTE
+    </div>
 
-            const newCard = document.createElement('div');
-            newCard.className = "bg-white p-6 rounded-3xl border border-pink-100 cute-card-shadow space-y-3";
-            newCard.innerHTML = `
-                <div class="flex justify-between items-center text-xs">
-                    <span class="font-semibold text-gray-700">${name}</span>
-                    <span class="text-amber-400 text-xs">${rating}</span>
-                </div>
-                <p class="text-xs text-gray-600 font-light leading-relaxed bg-pink-50/40 p-3.5 rounded-2xl border border-pink-100/50">
-                    "${text}"
-                </p>
-                <span class="text-[10px] text-pink-300 block text-right font-medium">เมื่อสักครู่นี้</span>
-            `;
+    <div class="row">
 
-            reviewsGrid.prepend(newCard);
-            document.getElementById('shop-review-form').reset();
-            reviewsGrid.scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+        <div class="value">
+            โอนเงินให้ยัยมิ
+        </div>
+
+        <button class="copy-btn"
+        onclick="copyText('โอนเงินให้ยัยมิ')">
+            คัดลอก
+        </button>
+
+    </div>
+
+    <div class="small-note">
+        * ลูกค้าใหม่ลืมโน๊ตปรับ 5 บาท
+    </div>
+
+</div>
+
+<div class="section">
+
+    <div class="line"></div>
+
+    <div class="small-note center">
+        หมายเหตุ: เช็คชื่อบัญชีทุกครั้งก่อนทำรายการ
+    </div>
+
+</div>
+
+<div class="section">
+    <div class="line"></div>
+</div>
+
+<div class="footer">
+
+    <h3>
+        Thank you for your order ♡
+    </h3>
+
+</div>
+
+</div>
+
+<div id="toast" class="toast">
+    คัดลอกแล้ว ♡
+</div>
+
+<script>
+
+function copyText(text){
+
+    navigator.clipboard.writeText(text);
+
+    const toast = document.getElementById("toast");
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 1500);
+
+}
+
+</script>
+
 </body>
 </html>
