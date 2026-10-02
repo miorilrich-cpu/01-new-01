@@ -11,11 +11,11 @@
     <style>
         body {
             font-family: 'Prompt', sans-serif;
-            background-color: #FFF9FA;
-            color: #5A4E52;
+            background-color: #F8F9FA;
+            color: #4A4A4A;
         }
-        .cute-shadow {
-            box-shadow: 0 10px 30px -10px rgba(255, 182, 193, 0.35);
+        .minimal-shadow {
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
         }
         @keyframes gentleSway {
             0% { transform: rotate(-1.5deg) translateY(0px); }
@@ -27,14 +27,16 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-pink-200">
+<body class="min-h-screen flex flex-col justify-between selection:bg-stone-200">
 
     <!-- Header / Navbar -->
-    <header class="w-full py-5 px-6 md:px-16 flex justify-between items-center bg-white/70 backdrop-blur-md border-b border-pink-100 sticky top-0 z-50">
-        <div class="text-xs md:text-sm font-semibold text-pink-500 tracking-wider">
-            Shop Review Hub 🌸
+    <header class="w-full py-5 px-6 md:px-16 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-stone-100 sticky top-0 z-50">
+        <div class="flex items-center space-x-2">
+            <!-- ไอคอนดอกไม้ SVG แทนอีโมจิ -->
+            <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path></svg>
+            <span class="text-xs md:text-sm font-medium tracking-widest text-stone-700 uppercase">Shop Review Hub</span>
         </div>
-        <a href="#review-section" class="text-xs bg-pink-100 text-pink-600 px-4 py-2 rounded-full font-medium hover:bg-pink-200 transition">
+        <a href="#review-section" class="text-xs tracking-wider text-stone-600 border border-stone-200 px-4 py-2 rounded-full hover:border-stone-400 transition">
             เขียนรีวิวร้านค้า
         </a>
     </header>
@@ -45,128 +47,140 @@
         <!-- Hero Section & Shop Overview -->
         <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
             
-            <!-- Swaying Card -->
+            <!-- เฟรมการ์ดสไตล์ Collectible/Polaroid ตามเรฟ และขยับส่ายช้าๆ -->
             <div class="md:col-span-5 flex justify-center order-1 md:order-2">
-                <div class="w-56 h-80 md:w-64 md:h-96 bg-gradient-to-b from-white to-pink-50 border-2 border-pink-200 rounded-3xl cute-shadow p-6 flex flex-col justify-between relative swaying-card">
-                    <div class="flex justify-between items-center text-xs font-semibold text-pink-400">
-                        <span>★ 5.0 / 5.0</span>
-                        <span>Verified</span>
-                    </div>
-                    <div class="my-auto text-center space-y-2">
-                        <div class="w-14 h-14 mx-auto rounded-2xl bg-pink-100 flex items-center justify-center text-pink-500 text-xl font-medium shadow-inner">
-                            ☁️
+                <div class="w-60 h-84 md:w-68 md:h-96 bg-white border-[3px] border-stone-200 rounded-3xl minimal-shadow p-4 flex flex-col justify-between relative swaying-card">
+                    <!-- กรอบด้านในจำลองเฟรมการ์ด -->
+                    <div class="absolute inset-3 border border-stone-200 rounded-2xl pointer-events-none p-3 flex flex-col justify-between">
+                        <div class="flex justify-between items-center text-[10px] tracking-widest text-stone-400 uppercase">
+                            <span>Rating 5.0</span>
+                            <!-- ไอคอนดาว SVG -->
+                            <svg class="w-3.5 h-3.5 text-amber-400 inline" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         </div>
-                        <h3 class="font-semibold text-gray-700 text-sm">Minimal & Cute Store</h3>
+                        <div class="text-[9px] tracking-widest text-stone-300 text-center uppercase">
+                            - Special Edition -
+                        </div>
                     </div>
-                    <div class="text-[11px] text-center text-pink-500 font-medium bg-pink-50/80 py-2 rounded-full border border-pink-100">
-                        บริการด้วยใจ น่ารักทุกล็อก 💖
+
+                    <!-- เนื้อหาการ์ดตรงกลาง -->
+                    <div class="my-auto text-center space-y-2 z-10">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-stone-50 border border-stone-200 flex items-center justify-center text-stone-500 shadow-inner">
+                            <!-- ไอคอนกล่องพัสดุ/ร้านค้า SVG -->
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"></path></svg>
+                        </div>
+                        <h3 class="font-medium text-stone-700 text-sm tracking-wide pt-1">Minimal & Cute Store</h3>
+                    </div>
+
+                    <!-- ส่วนล่างเฟรมการ์ด (ฟอนต์สไตล์เรฟ) -->
+                    <div class="text-center z-10 pt-2 border-t border-stone-100">
+                        <span class="text-xs font-light tracking-[0.25em] text-stone-500 uppercase block">verified review</span>
                     </div>
                 </div>
             </div>
 
             <!-- Text & Summary Info Column -->
             <div class="md:col-span-7 space-y-6 text-center md:text-left order-2 md:order-1">
-                <span class="inline-block bg-pink-100 text-pink-600 text-xs px-3 py-1 rounded-full font-medium">
-                    พื้นที่บอกต่อความประทับใจ
+                <span class="inline-flex items-center space-x-1.5 text-xs text-stone-500 bg-stone-100 px-3.5 py-1 rounded-full font-light tracking-wide">
+                    <svg class="w-3.5 h-3.5 text-stone-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"></path></svg>
+                    <span>พื้นที่บอกต่อความประทับใจ</span>
                 </span>
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
-                    รีวิวและคะแนนความพึงพอใจ <br>จากลูกค้าคนพิเศษ ✨
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-light text-stone-800 leading-tight">
+                    รีวิวและคะแนนความพึงพอใจ <br>จากลูกค้าคนพิเศษ
                 </h1>
-                <p class="text-gray-500 font-light text-sm md:text-base leading-relaxed max-w-lg mx-auto md:mx-0">
-                    รวมความรู้สึกและคำติชมจากประสบการณ์การใช้บริการจริง เพื่อตอกย้ำความมั่นใจและพัฒนาบริการให้ดียิ่งขึ้นค่ะ
+                <p class="text-stone-500 font-light text-sm md:text-base leading-relaxed max-w-lg mx-auto md:mx-0">
+                    รวมความรู้สึกและคำติชมจากประสบการณ์การใช้บริการจริง เพื่อตอกย้ำความมั่นใจและพัฒนาบริการให้ดียิ่งขึ้น
                 </p>
 
-                <!-- กล่องสรุปสถิติจำนวนรีวิวแบบเรียลไทม์ -->
-                <div class="bg-white border border-pink-100 rounded-2xl p-4 flex items-center justify-around max-w-md mx-auto md:mx-0 cute-shadow">
+                <!-- กล่องสรุปสถิติ -->
+                <div class="bg-white border border-stone-200 rounded-2xl p-4 flex items-center justify-around max-w-md mx-auto md:mx-0 minimal-shadow">
                     <div class="text-center">
-                        <span class="text-2xl font-bold text-pink-500">4.9</span>
-                        <div class="text-[10px] text-gray-400 font-medium">คะแนนเฉลี่ยรวม</div>
+                        <span class="text-2xl font-medium text-stone-800">4.9</span>
+                        <div class="text-[10px] text-stone-400 tracking-wider">คะแนนเฉลี่ยรวม</div>
                     </div>
-                    <div class="h-8 w-[1px] bg-pink-100"></div>
+                    <div class="h-8 w-[1px] bg-stone-200"></div>
                     <div class="text-center">
-                        <!-- ตัวเลขจำนวนรีวิวที่จะเพิ่มขึ้นตามจริง -->
-                        <span id="total-reviews-count" class="text-2xl font-bold text-gray-700">3</span>
-                        <div class="text-[10px] text-gray-400 font-medium">รีวิวทั้งหมดตอนนี้</div>
+                        <span id="total-reviews-count" class="text-2xl font-medium text-stone-800">3</span>
+                        <div class="text-[10px] text-stone-400 tracking-wider">รีวิวทั้งหมดตอนนี้</div>
                     </div>
-                    <div class="h-8 w-[1px] bg-pink-100"></div>
+                    <div class="h-8 w-[1px] bg-stone-200"></div>
                     <div class="text-center">
-                        <span class="text-2xl font-bold text-amber-400">★★★★★</span>
-                        <div class="text-[10px] text-gray-400 font-medium">ความพึงพอใจ</div>
+                        <span class="text-sm font-medium text-amber-500">★★★★★</span>
+                        <div class="text-[10px] text-stone-400 tracking-wider">ความพึงพอใจ</div>
                     </div>
                 </div>
 
                 <div class="pt-2 flex justify-center md:justify-start">
-                    <a href="#review-section" class="bg-pink-400 hover:bg-pink-500 text-white text-xs tracking-wider px-8 py-3.5 rounded-full shadow-md transition font-medium">
+                    <a href="#review-section" class="bg-stone-900 hover:bg-stone-800 text-white text-xs tracking-widest uppercase px-8 py-3.5 rounded-full shadow transition font-medium">
                         เขียนรีวิวร้านค้าของคุณ
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Reviews Wall Section (แสดงคอมเมนต์รีวิวจากลูกค้า) -->
+        <!-- Reviews Wall Section -->
         <section class="space-y-6">
             <div class="text-center space-y-1">
-                <span class="text-xs bg-pink-100 text-pink-600 px-3 py-1 rounded-full font-medium">Testimonials</span>
-                <h2 class="text-2xl font-bold text-gray-800">เสียงสะท้อนและคอมเมนต์จากลูกค้า</h2>
+                <span class="text-[10px] uppercase tracking-widest text-stone-400">Testimonials</span>
+                <h2 class="text-xl font-light text-stone-800">เสียงสะท้อนและคอมเมนต์จากลูกค้า</h2>
             </div>
 
             <!-- Grid Reviews -->
             <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- รีวิว 1 -->
-                <div class="bg-white p-6 rounded-3xl border border-pink-100 cute-shadow space-y-3">
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 minimal-shadow space-y-3">
                     <div class="flex justify-between items-center text-xs">
-                        <span class="font-semibold text-gray-700">คุณพลอยใส 🌸</span>
-                        <span class="text-amber-400 text-xs">★★★★★</span>
+                        <span class="font-medium text-stone-800">คุณพลอยใส</span>
+                        <span class="text-amber-500 text-xs">★★★★★</span>
                     </div>
-                    <p class="text-xs text-gray-600 font-light leading-relaxed bg-pink-50/50 p-3.5 rounded-2xl border border-pink-100/40">
+                    <p class="text-xs text-stone-600 font-light leading-relaxed bg-stone-50 p-3.5 rounded-xl border border-stone-100">
                         "ประทับใจการบริการของร้านนี้มากค่ะ ตอบไวและให้คำแนะนำดีสุดๆ สินค้าแพ็คมาอย่างดี น่ารักมากๆ ไว้มาอุดหนุนอีกแน่นอนค่ะ"
                     </p>
-                    <span class="text-[10px] text-pink-300 block text-right font-medium">เมื่อวานนี้</span>
+                    <span class="text-[10px] text-stone-400 block text-right font-light">เมื่อวานนี้</span>
                 </div>
 
                 <!-- รีวิว 2 -->
-                <div class="bg-white p-6 rounded-3xl border border-pink-100 cute-shadow space-y-3">
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 minimal-shadow space-y-3">
                     <div class="flex justify-between items-center text-xs">
-                        <span class="font-semibold text-gray-700">คุณมินต์ 🧸</span>
-                        <span class="text-amber-400 text-xs">★★★★★</span>
+                        <span class="font-medium text-stone-800">คุณมินต์</span>
+                        <span class="text-amber-500 text-xs">★★★★★</span>
                     </div>
-                    <p class="text-xs text-gray-600 font-light leading-relaxed bg-pink-50/50 p-3.5 rounded-2xl border border-pink-100/40">
+                    <p class="text-xs text-stone-600 font-light leading-relaxed bg-stone-50 p-3.5 rounded-xl border border-stone-100">
                         "จัดส่งรวดเร็วทันใจ ร้านค้าใส่ใจรายละเอียดดีมาก ได้รับของครบถ้วนถูกต้องตามที่คุยกันไว้เลยค่ะ ประทับใจมาก"
                     </p>
-                    <span class="text-[10px] text-pink-300 block text-right font-medium">3 วันก่อน</span>
+                    <span class="text-[10px] text-stone-400 block text-right font-light">3 วันก่อน</span>
                 </div>
 
                 <!-- รีวิว 3 -->
-                <div class="bg-white p-6 rounded-3xl border border-pink-100 cute-shadow space-y-3">
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 minimal-shadow space-y-3">
                     <div class="flex justify-between items-center text-xs">
-                        <span class="font-semibold text-gray-700">คุณการ์ฟิลด์ 🐱</span>
-                        <span class="text-amber-400 text-xs">★★★★★</span>
+                        <span class="font-medium text-stone-800">คุณการ์ฟิลด์</span>
+                        <span class="text-amber-500 text-xs">★★★★★</span>
                     </div>
-                    <p class="text-xs text-gray-600 font-light leading-relaxed bg-pink-50/50 p-3.5 rounded-2xl border border-pink-100/40">
+                    <p class="text-xs text-stone-600 font-light leading-relaxed bg-stone-50 p-3.5 rounded-xl border border-stone-100">
                         "ทีมงานดูแลดีและเป็นกันเองมากๆ ครับ ติดปัญหาตรงไหนช่วยเหลือรวดเร็ว ให้คะแนนเต็มสิบไม่หักเลย"
                     </p>
-                    <span class="text-[10px] text-pink-300 block text-right font-medium">1 สัปดาห์ก่อน</span>
+                    <span class="text-[10px] text-stone-400 block text-right font-light">1 สัปดาห์ก่อน</span>
                 </div>
             </div>
         </section>
 
         <!-- Review Form Section -->
-        <section id="review-section" class="bg-white border border-pink-200 rounded-3xl p-8 md:p-12 cute-shadow max-w-xl mx-auto w-full">
+        <section id="review-section" class="bg-white border border-stone-200 rounded-2xl p-8 md:p-12 minimal-shadow max-w-xl mx-auto w-full">
             <div class="text-center mb-6 space-y-1">
-                <span class="text-xs bg-pink-50 text-pink-500 px-3 py-1 rounded-full font-medium">Share your experience</span>
-                <h2 class="text-xl font-bold text-gray-800">เขียนรีวิวให้กับร้านค้าของเรา</h2>
-                <p class="text-xs text-gray-400">รีวิวของคุณจะไปแสดงโชว์ให้คนอื่นเห็นและเพิ่มยอดรีวิวรวมทันทีค่ะ</p>
+                <span class="text-[10px] uppercase tracking-widest text-stone-400">Feedback Form</span>
+                <h2 class="text-lg font-medium text-stone-800">เขียนรีวิวให้กับร้านค้าของเรา</h2>
+                <p class="text-xs text-stone-400">รีวิวของคุณจะไปแสดงโชว์ให้คนอื่นเห็นและเพิ่มยอดรีวิวรวมทันที</p>
             </div>
 
             <form id="shop-review-form" class="space-y-4" onsubmit="submitReview(event)">
                 <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">ชื่อผู้รีวิว / นามแฝง</label>
-                    <input type="text" id="reviewer-name" required placeholder="เช่น คุณลูกหมู 🐰" class="w-full px-4 py-3 rounded-2xl border border-pink-200 text-xs text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300 bg-pink-50/30">
+                    <label class="block text-xs font-medium text-stone-600 mb-1">ชื่อผู้รีวิว / นามแฝง</label>
+                    <input type="text" id="reviewer-name" required placeholder="เช่น คุณลูกหมู" class="w-full px-4 py-3 rounded-xl border border-stone-200 text-xs text-stone-700 focus:outline-none focus:border-stone-400 bg-stone-50/50">
                 </div>
                 
                 <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">คะแนนความพึงพอใจ</label>
-                    <select id="review-rating" class="w-full px-4 py-3 rounded-2xl border border-pink-200 text-xs text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300 bg-pink-50/30">
+                    <label class="block text-xs font-medium text-stone-600 mb-1">คะแนนความพึงพอใจ</label>
+                    <select id="review-rating" class="w-full px-4 py-3 rounded-xl border border-stone-200 text-xs text-stone-700 focus:outline-none focus:border-stone-400 bg-stone-50/50">
                         <option value="★★★★★">★★★★★ (5/5 - ประทับใจมากที่สุด)</option>
                         <option value="★★★★☆">★★★★☆ (4/5 - ดีมาก)</option>
                         <option value="★★★☆☆">★★★☆☆ (3/5 - ปานกลาง)</option>
@@ -174,11 +188,11 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">ข้อความคอมเมนต์รีวิวบริการ</label>
-                    <textarea id="review-text" rows="4" required placeholder="พิมพ์ข้อความรีวิวประสบการณ์การใช้บริการของคุณที่นี่..." class="w-full px-4 py-3 rounded-2xl border border-pink-200 text-xs text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300 bg-pink-50/30"></textarea>
+                    <label class="block text-xs font-medium text-stone-600 mb-1">ข้อความคอมเมนต์รีวิวบริการ</label>
+                    <textarea id="review-text" rows="4" required placeholder="พิมพ์ข้อความรีวิวประสบการณ์การใช้บริการของคุณที่นี่..." class="w-full px-4 py-3 rounded-xl border border-stone-200 text-xs text-stone-700 focus:outline-none focus:border-stone-400 bg-stone-50/50"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-pink-400 hover:bg-pink-500 text-white text-xs tracking-wider py-3.5 rounded-2xl shadow transition font-medium">
+                <button type="submit" class="w-full bg-stone-900 hover:bg-stone-800 text-white text-xs tracking-widest uppercase py-3.5 rounded-xl shadow transition font-medium">
                     ส่งรีวิวร้านค้า
                 </button>
             </form>
@@ -187,13 +201,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full py-8 px-6 md:px-16 border-t border-pink-100 text-xs text-pink-400 text-center bg-white/40">
-        © 2026 Shop Review Hub. All Rights Reserved. 🎀
+    <footer class="w-full py-8 px-6 md:px-16 border-t border-stone-100 text-xs text-stone-400 text-center bg-white/40">
+        © 2026 Shop Review Hub. All Rights Reserved.
     </footer>
 
     <!-- Script สำหรับอัปเดตจำนวนรีวิวและแสดงผลเรียลไทม์ -->
     <script>
-        let reviewCount = 3; // จำนวนรีวิวตั้งต้น
+        let reviewCount = 3;
 
         function submitReview(event) {
             event.preventDefault();
@@ -202,22 +216,20 @@
             const text = document.getElementById('review-text').value;
             const reviewsGrid = document.getElementById('reviews-grid');
             
-            // เพิ่มจำนวนรีวิวรวม
             reviewCount++;
             document.getElementById('total-reviews-count').innerText = reviewCount;
 
-            // สร้างการ์ดรีวิวใหม่
             const newCard = document.createElement('div');
-            newCard.className = "bg-white p-6 rounded-3xl border border-pink-100 cute-shadow space-y-3 animate-pulse";
+            newCard.className = "bg-white p-6 rounded-2xl border border-stone-200 minimal-shadow space-y-3";
             newCard.innerHTML = `
                 <div class="flex justify-between items-center text-xs">
-                    <span class="font-semibold text-gray-700">${name} ✨</span>
-                    <span class="text-amber-400 text-xs">${rating}</span>
+                    <span class="font-medium text-stone-800">${name}</span>
+                    <span class="text-amber-500 text-xs">${rating}</span>
                 </div>
-                <p class="text-xs text-gray-600 font-light leading-relaxed bg-pink-50/50 p-3.5 rounded-2xl border border-pink-100/40">
+                <p class="text-xs text-stone-600 font-light leading-relaxed bg-stone-50 p-3.5 rounded-xl border border-stone-100">
                     "${text}"
                 </p>
-                <span class="text-[10px] text-pink-300 block text-right font-medium">เมื่อสักครู่นี้</span>
+                <span class="text-[10px] text-stone-400 block text-right font-light">เมื่อสักครู่นี้</span>
             `;
 
             reviewsGrid.prepend(newCard);
